@@ -49,7 +49,7 @@
 	    function StyleObserver(callback) {
 	        this.step = 0;
 	        this.settings = {
-	            heavyDiff: true,
+	            useComputedStyle: true,
 	            skipFrames: 0,
 	        };
 	        this.callback = callback;
@@ -66,7 +66,7 @@
 	        if (this.node) {
 	            if (this.step === 0) {
 	                var styleData = {};
-	                if (this.settings.heavyDiff) {
+	                if (this.settings.useComputedStyle) {
 	                    styleData = this.getStyleData();
 	                }
 	                else {

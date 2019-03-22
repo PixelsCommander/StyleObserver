@@ -15,7 +15,11 @@
         const button = document.getElementById('button');
 
         const onButtonClicked = () => {
-            header.style.fontSize = '99px'
+            if (header.style.color === 'rgb(204, 204, 204)') {
+                header.style.color = '#000';
+            } else {
+                header.style.color = 'rgb(204, 204, 204)';
+            }
         };
 
         const onStylesChanges = (change) => {
@@ -26,7 +30,7 @@
         button.addEventListener('click', onButtonClicked);
 
         const observer = new StyleObserver(onStylesChanges);
-        observer.observe(window.header);
+        observer.observe(header);
     </script>
 
 </body>

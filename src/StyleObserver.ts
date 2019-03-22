@@ -9,7 +9,7 @@ export class StyleObserver {
     private node: HTMLElement;
     private raf: number;
     private settings = {
-        heavyDiff: true,
+        useComputedStyle: true,
         skipFrames: 0,
     };
 
@@ -34,7 +34,7 @@ export class StyleObserver {
             if (this.step === 0) {
                 var styleData = {};
 
-                if (this.settings.heavyDiff) {
+                if (this.settings.useComputedStyle) {
                     styleData = this.getStyleData();
                 } else {
                     styleData = this.getStyleDataQuick();
