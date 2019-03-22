@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleObserver demo</title>
+    <script src="../dist/index.umd.js"></script>
+</head>
+<body>
+    <h1 id="header">StyleObserver demo</h1>
+
+    <button id="button">Change font size</button>
+
+    <script>
+        const header = document.getElementById('header');
+        const button = document.getElementById('button');
+
+        const onButtonClicked = () => {
+            header.style.fontSize = '99px'
+        };
+
+        const onStylesChanges = (change) => {
+            alert('Styles changed');
+            console.log(JSON.stringify(change));
+        }
+
+        button.addEventListener('click', onButtonClicked);
+
+        const observer = new StyleObserver(onStylesChanges);
+        observer.observe(window.header);
+    </script>
+
+</body>
+</html>
