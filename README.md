@@ -4,12 +4,17 @@ The missing observer of DOM API
 Have you ever wished to track if any styles off HTMLElement were changed? Now you can!
 
 ## Usage
+As any other of DOM observers StyleObserver consumes callback, target HTMLElement and settings. Observer is being initiated after `observe` method is called. 
 ```
-const observer = new StyleObserver(onStylesChanges);
+const observer = new StyleObserver(callback);
 observer.observe(someDomNode, settingsObject);
+
+function callback(changes) {
+    //Changes is an object containing all CSS properties changed
+}
 ```
 
-Where `onStylesChanges` accepts argument which is an object describing all properties changed on the object.
+Where `callback` is a function which accepts JS object as an argument describing all properties changed.
 
 ## Settings
 `useComputedStyle: boolean` if true styles diff is made on getComputedStyle which is slower then just compare element.style. By default is `true`.
