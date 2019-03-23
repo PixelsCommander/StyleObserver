@@ -16,6 +16,8 @@ function callback(changes) {
 
 Where `callback` is a function which accepts JS object as an argument describing all properties changed.
 
+For more details look inside of `demo` folder in the repo.
+
 ## Settings
 `useComputedStyle: boolean` if true styles diff is made on getComputedStyle which is slower then just compare element.style. By default is `true`.
 

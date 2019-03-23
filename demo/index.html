@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>StyleObserver demo</title>
     <script src="../dist/index.umd.js"></script>
+    <style>
+        body, html {
+            font-family: "Helvetica Neue";
+        }
+
+        .centering-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="header">StyleObserver demo</h1>
-
-    <button id="button">Change font size</button>
+    <div class="centering-wrapper">
+        <h1 id="header">StyleObserver demo</h1>
+        <button id="button">Change color</button>
+    </div>
 
     <script>
         const header = document.getElementById('header');
