@@ -43,7 +43,15 @@
         button.addEventListener('click', onButtonClicked);
 
         const observer = new StyleObserver(onStylesChanges);
-        observer.observe(header);
+        observer.observe(header, {
+
+            // If commented out observer start using MutationObserver and tracks only style properties
+            // so anything changed with CSS e.g. :hover will not trigger
+            //useComputedStyle: false,
+
+            // If commented out observer check diff once 5 frames producing less load on CPU
+            //skipFrames: 5,
+        });
     </script>
 
 </body>
